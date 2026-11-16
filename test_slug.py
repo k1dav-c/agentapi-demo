@@ -59,6 +59,12 @@ class MainTest(unittest.TestCase):
             (0, "the-quick\n"),
         )
 
+    def test_short_option(self):
+        self.assertEqual(
+            self.run_main(["-n", "12", "The quick brown fox"]),
+            (0, "the-quick\n"),
+        )
+
     def test_negative_max_length_rejected(self):
         with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(SystemExit) as cm:
             main(["--max-length", "-1", "Hello"])

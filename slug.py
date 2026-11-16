@@ -33,6 +33,7 @@ def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(prog="slug.py", description=__doc__)
     parser.add_argument("title")
     parser.add_argument(
+        "-n",
         "--max-length",
         type=non_negative_int,
         metavar="N",
